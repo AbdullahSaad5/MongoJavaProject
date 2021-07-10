@@ -107,7 +107,6 @@ public class ViewMovies extends JPanel implements ActionListener {
             MongoClient mongoclient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
             DB myDB = mongoclient.getDB("testdb");
             DBCollection myCollection = myDB.getCollection("movies");
-//            BasicDBObject query = new BasicDBObject("title", "");
             DBCursor cursor = myCollection.find(search).sort(sort);
             while (cursor.hasNext()) {
                 try {
